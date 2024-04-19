@@ -1,6 +1,6 @@
 body{
     background-color: aliceblue;
-    font-size: large;
+    font-size: x-large;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
 }
@@ -17,8 +17,49 @@ button{
 
 ul{
     list-style: none;
+    border: 0;
+    padding: 0;
 }
 
 li{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(225, 235, 241);
+    padding: 5px 0px 5px 0px;
+}
+input[type="text"]{
+    width: 20pc;
+    height: 30px;
+    border-radius: 10px;
+    border: 0px;
+    box-shadow: 1px 1px rgb(0, 0, 0,0.3);
+}
+
+.add{
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    border: 0px;
+    box-shadow: 1px 1px rgb(0, 0, 0,0.3);
+    color: white;
+    background-color: rgb(5, 155, 72);
+}
+
+.delete{
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    border: 0px;
+    box-shadow: 1px 1px rgb(0, 0, 0,0.3);
+    color: white;
+    background-color: rgb(155, 1, 1);
+}
+
+.rename{
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    border: 0px;
+    box-shadow: 1px 1px rgb(0, 0, 0,0.3);
+    color: white;
+    background-color: rgb(1, 120, 141);
 }

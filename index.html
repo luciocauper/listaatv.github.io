@@ -13,9 +13,8 @@
   <h1>Lista de atividades </h1>
   <div class="site">
     <form id="form">
-      <label for="tarefa">Tarefa</label> <br>
       <input type="text" id="tarefaInput" placeholder="Minha tarefa é..." required>
-      <input type="submit" value="Adicionar">
+      <input class="add" type="submit" value="Adicionar">
     </form>
   
     <ul id="listaTarefas"></ul>
@@ -31,6 +30,7 @@
 
       var botaoEditar = document.createElement('button');
       botaoEditar.textContent = 'Editar';
+      botaoEditar.classList.add('rename');
       botaoEditar.addEventListener('click', function () {
         var novoTexto = prompt('Digite o novo texto da tarefa:', novaTarefa.firstChild.textContent);
         if (novoTexto !== null) {
@@ -40,6 +40,7 @@
 
       var botaoApagar = document.createElement('button');
       botaoApagar.textContent = 'Apagar';
+      botaoApagar.classList.add('delete');
       botaoApagar.addEventListener('click', function () {
         novaTarefa.remove();
       });
