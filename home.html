@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>Lista de atividades </h1>
+  <div class="site">
+    <form id="form">
+      <label for="tarefa">Tarefa</label> <br>
+      <input type="text" id="tarefaInput" placeholder="Minha tarefa é..." required>
+      <input type="submit" value="Adicionar">
+    </form>
+  
+    <ul id="listaTarefas"></ul>
+  </div>
+
+  <script>
+    document.getElementById('form').addEventListener('submit', function (event) {
+      event.preventDefault(); 
+
+      var tarefaTexto = document.getElementById('tarefaInput').value;
+      var novaTarefa = document.createElement('li');
+      novaTarefa.textContent = tarefaTexto + " ";
+
+      var botaoEditar = document.createElement('button');
+      botaoEditar.textContent = 'Editar';
+      botaoEditar.addEventListener('click', function () {
+        var novoTexto = prompt('Digite o novo texto da tarefa:', novaTarefa.firstChild.textContent);
+        if (novoTexto !== null) {
+          novaTarefa.firstChild.textContent = novoTexto + " ";
+        }
+      });
+
+      var botaoApagar = document.createElement('button');
+      botaoApagar.textContent = 'Apagar';
+      botaoApagar.addEventListener('click', function () {
+        novaTarefa.remove();
+      });
+      novaTarefa.appendChild(botaoEditar);
+      novaTarefa.appendChild(botaoApagar);
+
+      document.getElementById('listaTarefas').appendChild(novaTarefa);
+      document.getElementById('tarefaInput').value = '';
+    });
+  </script>
+
+</body>
+
+</html>
